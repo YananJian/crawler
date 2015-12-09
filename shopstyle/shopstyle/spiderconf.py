@@ -1,0 +1,14 @@
+seed_url = "http://www.shopstyle.com/api/v2/products?"\
+        "cat={0}"\
+        "&device=desktop"\
+        "&includeCategoryHistogram=true"\
+        "&includeProducts=true"\
+        "&limit={1}"\
+        "&locales=all"\
+        "&offset={2}"\
+        "&pid=shopstyle"\
+        "&prevCat={3}"\
+        "&productScore=LessPopularityEPC"\
+        "&track=false"\
+        "&url=%2Fbrowse%2Fdresses"\
+        "&view=angular"
