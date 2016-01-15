@@ -10,5 +10,5 @@ seed_url = "http://www.shopstyle.com/api/v2/products?"\
         "&prevCat={3}"\
         "&productScore=LessPopularityEPC"\
         "&track=false"\
-        "&url=%2Fbrowse%2Fdresses"\
+        "&url=%2Fbrowse%2F{4}"\
         "&view=angular"

@@ -7,7 +7,7 @@ class ShopstylePipeline(object):
         self.mongodao = db.MongoDAO()
 
     def process_item(self, item, spider):
-        self.mongodao.update("shopstyle", {"prodId" : item.get('prodId')}, dict(item), upsert = True)
+        self.mongodao.update("shopstyle", {"prodId" : item.get('prodId'), "gender":item.get("gender")}, dict(item), upsert = True)
         return item
 
     def close_spider(self, spider):

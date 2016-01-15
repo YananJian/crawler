@@ -7,7 +7,6 @@ from scrapy.item import Item, Field
 
 class ShopstyleItem(Item):
     # define the fields for your item here like:
-    # name = Field()
     prodId = Field()
     name = Field()
     brandedName = Field()
@@ -21,3 +20,4 @@ class ShopstyleItem(Item):
     alternateImages = Field()
     colors = Field()
     categories = Field()
+    gender = Field()

@@ -9,7 +9,7 @@ import json
 class ShopstylebotSpider(scrapy.Spider):
     name = "shopstylebot"
     allowed_domains = ["shopstyle.com"]
-    start_urls = genstarturl.gen_urls(1, 100)
+    start_urls = genstarturl.gen_urls(1, 589538)
 
     def parse(self, response):
         json_resp = response.body.decode(response.encoding)
@@ -17,6 +17,10 @@ class ShopstylebotSpider(scrapy.Spider):
         items = []
         total = resp.get("metadata").get("total")
         products = resp.get("products")
+        genderId = resp.get("metadata").get("category").get("id")
+        gender = 'f'
+        if genderId.startswith("mens"):
+            gender = 'm'
         print "total:{0}".format(total)
         for prod in products:
             item = ShopstyleItem()
@@ -49,6 +53,7 @@ class ShopstylebotSpider(scrapy.Spider):
             for cate in catelist:
                 _cates.append(cate.get('name'))
             item['categories'] = _cates
+            item['gender'] = gender
             items.append(item)
 
         return items
